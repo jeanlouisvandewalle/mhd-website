@@ -157,7 +157,7 @@ def page(path, title, desc, body, active="", og_image=None, out=None):
 <link rel="icon" href="{r}assets/img/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{r}assets/css/style.css">
 </head>
 <body data-root="{r}">
@@ -218,12 +218,12 @@ def by_cat(cat):
 # ---------------------------------------------------------------- home
 home = f"""
 <section class="hero">
-  <div class="hero__media"><img src="{{r}}{img('uitbouw-leefruimte', 1)}" alt="Leefruimte met eiken wandbekleding en zwart eiken keuken door MHD" fetchpriority="high"></div>
+  <div class="hero__media"><img src="{{r}}{img('appartement-leem-en-eik', 2)}" alt="Keuken met kalkvolumes, eiken eiland en maatkasten door MHD" fetchpriority="high"></div>
   <div class="wrap">
     <div class="hero__grid">
       <div>
         <span class="eyebrow reveal">Atelier in Izegem · Drie generaties</span>
-        <h1 class="reveal">Schrijnwerk van de <span class="it">bovenste</span> plank</h1>
+        <h1 class="reveal">Schrijnwerk van de <span class="it">bovenste plank</span></h1>
         <div class="hero__actions reveal"><a class="btn btn--solid" href="{{r}}realisaties/">Ontdek onze realisaties {ARROW}</a><a class="btn btn--ghost" href="{{r}}contact/">Neem contact op</a></div>
       </div>
       <div class="hero__side reveal"><p><b>Maatwerk om op te bouwen.</b> Droom je van een kast op maat, een unieke eettafel of een volledig interieur? Wij maken er werk van.</p></div>
@@ -232,20 +232,18 @@ home = f"""
   <div class="hero__scroll" aria-hidden="true">Scroll</div>
 </section>
 
-<section class="section">
+<section class="section section--tight">
   <div class="wrap">
     <div class="intro">
       <div class="intro__statement">
         <span class="eyebrow reveal">Over MHD</span>
         <h2 class="reveal">Hout zit in ons <span class="it">DNA.</span> Al drie generaties.</h2>
-      </div>
-      <div class="intro__body">
         <p class="lead reveal">MHD is een jong en dynamisch familiebedrijf dat vakmanschap en professionaliteit voorop zet. In ons eigen atelier in Izegem transformeren we uw favoriete houtsoort in een interieur of buitenomgeving dat generaties meegaat.</p>
         <a class="link reveal" href="{{r}}over-mhd/">Ons verhaal {ARROW}</a>
-        <div class="intro__media">
-          <img class="reveal-img" src="{{r}}{img('appartement-leem-en-eik', 3, True)}" alt="Keuken in kalk en eiken" loading="lazy">
-          <img class="reveal-img" src="{{r}}{img('maatkasten-slaapkamer-bureau', 5, True)}" alt="Detail van een ingefreesde eiken greep" loading="lazy">
-        </div>
+      </div>
+      <div class="intro__media">
+        <img class="reveal-img" src="{{r}}{img('appartement-leem-en-eik', 3, True)}" alt="Keuken in kalk en eiken" loading="lazy">
+        <img class="reveal-img" src="{{r}}{img('maatkasten-slaapkamer-bureau', 5, True)}" alt="Detail van een ingefreesde eiken greep" loading="lazy">
       </div>
     </div>
     <div class="stats">
@@ -284,7 +282,7 @@ home = f"""
   </div>
 </section>
 
-<div class="band"><img src="{{r}}{img('appartement-leem-en-eik', 2)}" alt="Leefruimte met keukeneiland en maatkasten" loading="lazy"></div>
+<div class="band"><img src="{{r}}{img('poolhouse-kortrijk', 3)}" alt="Poolhouse met houten gevelbekleding" loading="lazy"></div>
 
 <section class="section dark">
   <div class="wrap">
@@ -383,13 +381,13 @@ discipline_page(
     "Interieurbouw op maat: maatkasten, keukens, houten wanden, deuren, toonbanken, meubels en parket, uitgevoerd met precisie.",
     "Schrijnwerk voor binnen", "Interieur <span class=\"it\">op maat</span>",
     "Ingebouwd of losstaand, residentieel of professioneel. Elk interieur uitgevoerd met precisie en een uitzonderlijk kwalitatieve afwerking.",
-    img("appartement-leem-en-eik", 1),
+    img("appartement-nieuwpoort", 1),
     "Alles wat met interieurbouw te maken heeft.",
     ["Bij ons kan je terecht voor alles wat met interieurbouw te maken heeft, zowel ingebouwd als losstaand. Alle interieurprojecten voeren we uit met precisie en een uitzonderlijk kwalitatieve afwerking.",
      "We hebben een team gespecialiseerd in interieurschrijnwerk dat graag alle types schrijnwerk binnenshuis aanpakt. Daarbij ontwikkelen we zelfs unieke concepten, 100% op maat — en zorgen we uiteraard voor een verfijnde afwerking.",
      "We ontwerpen en realiseren onze projecten in onze eigen tekensoftware. Zo werken we optimaal samen voor het beste resultaat."],
     ["Maatkasten &amp; dressings", "Keukens", "Houten wanden &amp; lambrisering", "Deuren", "Toonbanken &amp; horeca", "Meubels &amp; werkbladen", "Parket"],
-    img("appartement-nieuwpoort", 6, True), "Appartement Nieuwpoort — eiken &amp; terrazzo",
+    img("appartement-leem-en-eik", 4, True), "Residentie in kalk &amp; eik",
 )
 discipline_page(
     "exterieur", "Robuust, duurzaam en stijlvol buitenschrijnwerk | MHD Totaalprojecten",
@@ -407,7 +405,7 @@ discipline_page(
 discipline_page(
     "totaalconcept", "Totaalprojecten: van ontwerp tot uitvoering | MHD Totaalprojecten",
     "MHD neemt elke stap van het constructieproces voor zijn rekening, met nauwgezette werfcoördinatie en opvolging.",
-    "Totaalprojecten", "Totaal&shy;<span class=\"it\">concept</span>",
+    "Totaalprojecten", "Totaalconcept <span class=\"it\">van A tot Z</span>",
     "Eén partner, één aanspreekpunt. Van eerste ontwerp tot sleutel-op-de-deur.",
     img("uitbouw-leefruimte", 2),
     "Elke stap voor onze rekening.",
@@ -478,7 +476,7 @@ body = page_hero("Contact", "Neem <span class=\"it\">contact</span> op", "", sho
       <div class="contact__info">
         <span class="eyebrow reveal">Maak je houtdromen waar</span>
         <h2 class="reveal">Vertel ons over uw <span class="it">project.</span></h2>
-        <p class="reveal">Particulier, architect, ontwikkelaar of ondernemer: we bekijken elke aanvraag persoonlijk en nemen binnen twee werkdagen contact met u op.</p>
+        <p class="reveal">We bekijken elke aanvraag persoonlijk en nemen binnen twee werkdagen contact met u op.</p>
         <ul class="contact__list">
           <li class="reveal"><small>Telefoon</small><a href="{PHONE_LINK}">{PHONE}</a></li>
           <li class="reveal"><small>E-mail</small><a href="mailto:{EMAIL}">{EMAIL}</a></li>
@@ -489,7 +487,6 @@ body = page_hero("Contact", "Neem <span class=\"it\">contact</span> op", "", sho
         <input type="hidden" name="_subject" value="Nieuwe aanvraag via de website">
         <input type="hidden" name="_template" value="table">
         <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <fieldset class="field field--full"><legend>Ik ben</legend><div class="chips">{chips('Profiel', ['Particulier', 'Architect', 'Aannemer / ontwikkelaar', 'Ondernemer'])}</div></fieldset>
         <div class="field"><label for="f-vn">Voornaam</label><input id="f-vn" name="Voornaam" autocomplete="given-name" required></div>
         <div class="field"><label for="f-fn">Familienaam</label><input id="f-fn" name="Familienaam" autocomplete="family-name" required></div>
         <div class="field"><label for="f-em">E-mail</label><input id="f-em" type="email" name="email" autocomplete="email" required></div>
@@ -508,7 +505,7 @@ page("contact/", "Neem contact op met ons | MHD Totaalprojecten",
 
 # ---------------------------------------------------------------- privacy
 privacy = open(os.path.join(HERE, "privacy.html"), encoding="utf-8").read()
-body = page_hero("Juridisch", "Privacy&shy;beleid", "", short=True) + f"""
+body = page_hero("Juridisch", "Privacybeleid", "", short=True) + f"""
 <section class="section"><div class="wrap"><div class="prose">{privacy}</div></div></section>"""
 page("privacy-beleid/", "Privacybeleid | MHD Totaalprojecten", "Privacybeleid van MHD Totaalprojecten.", body)
 
