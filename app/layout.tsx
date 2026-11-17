@@ -1,16 +1,9 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { RevealObserver } from "@/components/RevealObserver";
 import { site } from "@/content/site";
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -31,7 +24,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#ffffff",
+  themeColor: "#0b0b0b",
 };
 
 const jsonLd = {
@@ -54,8 +47,12 @@ const jsonLd = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="nl-BE" className={inter.variable} suppressHydrationWarning>
+    <html lang="nl-BE" suppressHydrationWarning>
       <head>
+        {/* Sweet Sans Pro — lettertype van het MHD-logo, via de bestaande Adobe Fonts-kit van MHD */}
+        <link rel="preconnect" href="https://use.typekit.net" crossOrigin="" />
+        <link rel="preconnect" href="https://p.typekit.net" crossOrigin="" />
+        <link rel="stylesheet" href="https://use.typekit.net/ytx6hpy.css" />
         {/* Activeert de reveal-animaties enkel wanneer JavaScript beschikbaar is */}
         <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />

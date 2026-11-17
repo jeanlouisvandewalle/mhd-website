@@ -16,25 +16,30 @@ De map `out/` is een volledig statische website. Upload ze naar eender welke hos
 
 ## 1. Designrichting
 
-*Photography first. Design second. Words last.*
+*Photography first. Design second. Words last.* Ingetogen, maar uitgesproken luxueus.
 
-- **Monochrome interface**: wit `#FFFFFF`, zwart `#111111`, grijs `#737373`, lichtgrijs `#F5F5F5`, lijnen `#E5E5E5`.
-  Het grijs is `#737373` in plaats van `#777777`: `#777` haalt op wit net geen 4,5:1 (WCAG AA) voor kleine tekst.
-  Het verschil is visueel niet waarneembaar.
-- **Fotografie in originele kleuren** als bouwsteen van de layout: rechthoekig, geen afgeronde hoeken, geen schaduwen.
-- **12-koloms grid** met asymmetrische, editoriale composities: grote liggende beelden, verticale details en bewuste witruimte.
-  Op tablet worden het twee kolommen, op mobiel één kolom.
-- **Geen knoppen**: navigatie gebeurt via tekstlinks met een dunne lijn en een pijl.
-- **Zwarte footer** als enige donkere vlak.
-- **Rustige beweging**: zachte reveals bij scrollen, hover-zoom van 1,03 over 700 ms, een fade bij paginawissels.
-  Alles valt weg bij `prefers-reduced-motion`.
+- **Kleur**: diep zwart `#0B0B0B` en wit vormen de basis. Ze worden aangevuld met een warm kalkwit `#F2EFE9`,
+  afgeleid van de kalkafwerking in de realisaties, en een fijn bronsaccent (`#8C7148` op licht, `#C3A676` op donker)
+  voor lijnen, nummers en labels.
+- **Ritme**: secties wisselen tussen zwart, wit en kalkwit (klassen `theme-dark`, `theme-light` en `theme-kalk`).
+  Header en footer zijn altijd zwart.
+- **Fotografie in originele kleuren** als bouwsteen van de layout. Hero's vullen het scherm, met een zachte verdonkering
+  onderaan voor leesbare tekst.
+- **12-koloms grid** met asymmetrische, editoriale composities. Op tablet worden het twee kolommen, op mobiel één.
+- **Geen knoppen**: navigatie gebeurt via tekstlinks in kapitalen met een bronslijn en een pijl.
+- **Rustige beweging**: hero's faden in vanuit zwart, elementen verschijnen zacht bij het scrollen,
+  beelden zoomen licht in bij hover. Alles valt weg bij `prefers-reduced-motion`.
 
 ## 2. Lettertype
 
-**Inter** (variabel, via `next/font`, zelf gehost; er is geen verbinding met Google in de browser).
-Het is één neutrale grotesk die dicht bij Helvetica Neue / Neue Haas Grotesk ligt. Inter wordt gebruikt in normaal gewicht met
-strakke letterspatiëring voor titels, en in kleine kapitalen met ruime spatiëring voor labels.
-Typografische stijlen staan als klassen (`t-display`, `t-h1`, `t-h2`, `t-h3`, `t-lead`, `t-label`, `t-small`) in `app/globals.css`.
+**Sweet Sans Pro**: dezelfde letterfamilie als het MHD-logo en de huidige website. Kapitalen met ruime spatiëring
+(klasse `t-caps`, `t-label`) geven de typografische stem van het logo terug. Titels en lopende tekst staan in gewone
+schrijfwijze.
+
+Het lettertype wordt geladen via de bestaande **Adobe Fonts-kit van MHD** (`ytx6hpy`, zie `app/layout.tsx`).
+Die licentie hoort bij het Adobe-account van MHD. Aandachtspunt bij livegang: de kit moet het productiedomein
+toelaten. Dat is vandaag al zo voor totaalprojecten-mhd.be. Is de kit onbereikbaar, dan valt de site terug op
+Helvetica Neue of Arial.
 
 ## 3. Projectstructuur
 
@@ -157,7 +162,7 @@ geen server.
   JSON-LD (bedrijf en projecten), `lang="nl-BE"`
 - Toegankelijkheid: semantische HTML, skiplink, zichtbare focus, alt-teksten, formulierlabels en foutmeldingen,
   `prefers-reduced-motion`
-- Performance: responsive WebP via `srcset`, lazy loading, hero met voorrang, zelf gehost lettertype, geen externe scripts
+- Performance: responsive WebP via `srcset`, lazy loading, hero met voorrang, geen externe scripts (enkel de Adobe Fonts-stylesheet)
 - Doorverwijzingen van de oude URL's van de vorige site
 
 **Tijdelijke of te bevestigen content**: zie punt 7.

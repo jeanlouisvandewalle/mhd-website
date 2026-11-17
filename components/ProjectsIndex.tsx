@@ -9,23 +9,28 @@ export function ProjectsIndex({ category }: { category?: Category }) {
 
   return (
     <>
-      <section className="wrap pt-[clamp(4rem,10vw,10rem)] pb-[clamp(3rem,6vw,6rem)]">
-        <div className="grid-12 gap-y-10 items-end">
-          <div className="col-span-12 lg:col-span-8" data-reveal>
-            <p className="t-label text-grey mb-6">{cat ? "Projecten" : "Portfolio"}</p>
-            <h1 className="t-display">{cat ? cat.label : "Projecten"}</h1>
+      {/* Opening op zwart */}
+      <section className="theme-dark">
+        <div className="wrap pt-[clamp(5rem,11vw,11rem)] pb-[clamp(2.5rem,4vw,4rem)]">
+          <div className="grid-12 gap-y-10 items-end">
+            <div className="col-span-12 lg:col-span-8" data-reveal>
+              <p className="t-label rule text-accent mb-8">{cat ? "Projecten" : "Portfolio"}</p>
+              <h1 className="t-display t-caps !tracking-[0.06em]">{cat ? cat.label : "Projecten"}</h1>
+            </div>
+            <p className="col-span-12 lg:col-span-4 t-lead text-grey lg:text-right" data-reveal style={{ "--reveal-delay": "120ms" } as React.CSSProperties}>
+              {cat ? cat.intro : "Een selectie van ons werk."}
+            </p>
           </div>
-          <p className="col-span-12 lg:col-span-4 t-lead text-grey lg:text-right" data-reveal style={{ "--reveal-delay": "120ms" } as React.CSSProperties}>
-            {cat ? cat.intro : "Een selectie van ons werk."}
-          </p>
-        </div>
-        <div className="mt-[clamp(3rem,6vw,6rem)] pt-5 border-t border-line" data-reveal>
-          <CategoryFilters active={category ?? "alle"} counts={counts} />
+          <div className="mt-[clamp(4rem,7vw,7rem)] pt-6 border-t border-line" data-reveal>
+            <CategoryFilters active={category ?? "alle"} counts={counts} />
+          </div>
         </div>
       </section>
 
-      <section className="wrap pb-[var(--section)]">
-        {list.length ? <ProjectGrid projects={list} /> : <EmptyCategory label={cat?.label ?? ""} />}
+      <section className="theme-light">
+        <div className="wrap pt-[clamp(4rem,8vw,8rem)] pb-[var(--section)]">
+          {list.length ? <ProjectGrid projects={list} /> : <EmptyCategory label={cat?.label ?? ""} />}
+        </div>
       </section>
     </>
   );

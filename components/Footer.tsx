@@ -6,14 +6,14 @@ import { categories } from "@/content/projects";
 
 export function Footer() {
   return (
-    <footer className="bg-ink text-white">
+    <footer className="theme-dark">
       <div className="wrap pt-24 md:pt-32 pb-10">
-        <div className="grid-12 gap-y-14">
+        <div className="grid-12 gap-y-16 border-t border-line pt-16 md:pt-20">
           <div className="col-span-12 lg:col-span-5">
             <Link href="/" aria-label={`${site.name} — home`} className="inline-block">
-              <Logo className="h-9 w-auto" />
+              <Logo className="h-11 md:h-14 w-auto" />
             </Link>
-            <p className="mt-8 t-small text-footer-grey">{site.tagline}</p>
+            <p className="mt-10 t-label text-grey">{site.tagline}</p>
           </div>
 
           <FooterCol title="Navigatie" className="col-span-6 md:col-span-4 lg:col-span-2">
@@ -43,7 +43,7 @@ export function Footer() {
           </FooterCol>
         </div>
 
-        <div className="mt-24 md:mt-32 pt-6 border-t border-white/15 flex flex-col sm:flex-row gap-3 justify-between t-small text-footer-grey">
+        <div className="mt-24 md:mt-32 pt-6 border-t border-line flex flex-col sm:flex-row gap-3 justify-between t-small text-grey">
           <p>© {site.name} — <Year /></p>
           <Link href="/privacy/" className="link-line self-start">Privacybeleid</Link>
         </div>
@@ -55,8 +55,8 @@ export function Footer() {
 function FooterCol({ title, className, children }: { title: string; className: string; children: React.ReactNode }) {
   return (
     <div className={className}>
-      <h2 className="t-label text-footer-grey mb-6">{title}</h2>
-      <ul className="flex flex-col gap-3 text-[15px]">{children}</ul>
+      <h2 className="t-label text-accent mb-7">{title}</h2>
+      <ul className="flex flex-col gap-3.5 text-[15px]">{children}</ul>
     </div>
   );
 }

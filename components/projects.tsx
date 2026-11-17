@@ -77,16 +77,16 @@ export function ProjectCard({
         zoom
         className={shape === "wide" ? "max-md:!aspect-[3/2]" : ""}
       />
-      <div className="mt-5 flex items-start justify-between gap-6">
+      <div className="mt-6 flex items-start justify-between gap-6">
         <div>
-          <h3 className="text-[17px] leading-snug tracking-[-0.015em]">{p.title}</h3>
-          <p className="t-label text-grey mt-2">
+          <h3 className="text-[13px] leading-snug t-caps !tracking-[0.2em] font-semibold">{p.title}</h3>
+          <p className="t-small text-grey mt-2">
             {categoryLabel(p.categories[0])}
             {p.location ? <span> · {p.location}</span> : null}
           </p>
         </div>
-        <div className="flex items-center gap-4 pt-[3px] t-small text-grey t-num">
-          <Arrow className="opacity-0 -translate-x-1 transition-all duration-500 group-hover:opacity-100 group-hover:translate-x-0 text-ink" />
+        <div className="flex items-center gap-4 pt-[1px] t-label text-accent t-num">
+          <Arrow className="opacity-0 -translate-x-1 transition-all duration-500 group-hover:opacity-100 group-hover:translate-x-0" />
           <span>{String(index).padStart(2, "0")}</span>
         </div>
       </div>
@@ -106,11 +106,11 @@ export function CategoryFilters({ active, counts }: { active: Category | "alle";
             <li key={it.slug}>
               <Link
                 href={it.href}
-                className={`link-line inline-flex items-baseline gap-1.5 py-2 ${isActive ? "is-active text-ink" : "text-grey hover:text-ink transition-colors duration-500"}`}
+                className={`link-line inline-flex items-baseline gap-1.5 py-2 ${isActive ? "is-active text-fg" : "text-grey hover:text-fg transition-colors duration-500"}`}
                 aria-current={isActive ? "page" : undefined}
               >
                 {it.label}
-                <sup className="t-num text-[9px] tracking-normal">{counts[it.slug] ?? 0}</sup>
+                <sup className="t-num text-[9px] tracking-normal text-accent">{counts[it.slug] ?? 0}</sup>
               </Link>
             </li>
           );
@@ -123,7 +123,7 @@ export function CategoryFilters({ active, counts }: { active: Category | "alle";
 /** Verzorgde lege toestand voor een categorie zonder projecten. */
 export function EmptyCategory({ label }: { label: string }) {
   return (
-    <div className="grid-12 border-t border-line pt-10">
+    <div className="grid-12 border-t border-line pt-12">
       <p className="col-span-12 md:col-span-6 t-lead text-grey">
         Binnenkort tonen we hier onze projecten in {label.toLowerCase()}.
       </p>

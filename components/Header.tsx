@@ -44,20 +44,20 @@ export function Header() {
 
   return (
     <>
-      <header className={`site-header ${compact ? "is-compact" : ""}`}>
+      <header className={`site-header theme-dark ${compact ? "is-compact" : ""}`}>
         <div className="wrap site-header__bar">
           <Link href="/" className="site-logo" aria-label={`${site.name} — home`}>
             <Logo />
           </Link>
 
           <nav aria-label="Hoofdnavigatie" className="hidden md:block">
-            <ul className="flex items-center gap-12 t-label">
+            <ul className="flex items-center gap-14 nav-link">
               <li className="dropdown py-3">
                 <Link href="/projecten/" className={`link-line ${isActive("/projecten/") ? "is-active" : ""}`} aria-current={pathname === "/projecten/" ? "page" : undefined}>
                   Projecten
                 </Link>
                 <div className="dropdown__panel">
-                  <ul className="flex flex-col gap-3">
+                  <ul className="flex flex-col gap-4">
                     <li>
                       <Link href="/projecten/" className="link-line">Alle projecten</Link>
                     </li>
@@ -100,15 +100,15 @@ export function Header() {
         </div>
       </header>
 
-      <div id="mobile-menu" className={`mobile-menu md:hidden ${open ? "is-open" : ""}`} aria-hidden={!open} inert={!open}>
+      <div id="mobile-menu" className={`mobile-menu theme-dark md:hidden ${open ? "is-open" : ""}`} aria-hidden={!open} inert={!open}>
         <nav aria-label="Mobiele navigatie" className="wrap flex flex-1 flex-col justify-between pt-10 pb-10">
           <ul className="flex flex-col gap-2">
             <li className="mm-item" style={{ transitionDelay: "60ms" }}>
-              <Link href="/projecten/" className="t-h1 block py-1">Projecten</Link>
+              <Link href="/projecten/" className="t-h1 t-caps block py-1">Projecten</Link>
               <ul className="mt-3 mb-5 flex flex-col gap-1 pl-1">
                 {categories.map((c) => (
                   <li key={c.slug}>
-                    <Link href={`/projecten/${c.slug}/`} className="block py-2 text-[15px] text-grey">
+                    <Link href={`/projecten/${c.slug}/`} className="block py-2 nav-link text-grey">
                       {c.label}
                     </Link>
                   </li>
@@ -117,7 +117,7 @@ export function Header() {
             </li>
             {nav.slice(1).map((item, i) => (
               <li key={item.href} className="mm-item" style={{ transitionDelay: `${120 + i * 60}ms` }}>
-                <Link href={item.href} className="t-h1 block py-1">{item.label}</Link>
+                <Link href={item.href} className="t-h1 t-caps block py-1">{item.label}</Link>
               </li>
             ))}
           </ul>

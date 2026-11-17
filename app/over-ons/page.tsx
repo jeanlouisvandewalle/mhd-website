@@ -42,19 +42,21 @@ export default function AboutPage() {
   return (
     <>
       {/* Opening */}
-      <section className="wrap pt-[clamp(4rem,10vw,10rem)] pb-[clamp(4rem,9vw,9rem)]">
+      <section className="theme-dark">
+        <div className="wrap pt-[clamp(5rem,11vw,11rem)] pb-[clamp(4rem,9vw,9rem)]">
         <div className="grid-12 gap-y-10">
           <div className="col-span-12 lg:col-span-9" data-reveal>
-            <p className="t-label text-grey mb-6">Over MHD</p>
+            <p className="t-label rule text-accent mb-8">Over MHD</p>
             <h1 className="t-display">Vakmanschap, generatie na generatie.</h1>
           </div>
           <p className="col-span-12 md:col-span-7 md:col-start-6 lg:col-span-4 lg:col-start-9 t-lead text-grey self-end" data-reveal style={delay(150)}>
             MHD combineert drie generaties ervaring met een scherp oog voor materiaal, vorm en afwerking.
           </p>
         </div>
+        </div>
       </section>
 
-      <div className="px-[var(--gutter)] md:px-0" data-reveal>
+      <div className="theme-dark" data-reveal>
         <Picture
           slug="uitbouw-leefruimte"
           id="01"
@@ -66,12 +68,13 @@ export default function AboutPage() {
       </div>
 
       {/* Thema's */}
-      <section className="wrap py-[var(--section)]" aria-label="Waar MHD voor staat">
+      <section className="theme-light" aria-label="Waar MHD voor staat">
+        <div className="wrap py-[var(--section)]">
         <ol className="flex flex-col">
           {themes.map((t, i) => (
             <li key={t.no} className="grid-12 gap-y-4 border-t border-line py-[clamp(2.5rem,5vw,4.5rem)] last:border-b" data-reveal style={delay(i * 80)}>
-              <span className="col-span-2 lg:col-span-1 t-label text-grey t-num pt-2">{t.no}</span>
-              <h2 className="col-span-10 lg:col-span-4 t-h2">{t.word}</h2>
+              <span className="col-span-2 lg:col-span-1 t-label text-accent t-num pt-3">{t.no}</span>
+              <h2 className="col-span-10 lg:col-span-4 t-h2 t-caps !tracking-[0.08em]">{t.word}</h2>
               <div className="col-span-12 md:col-span-10 md:col-start-3 lg:col-span-5 lg:col-start-7">
                 <p className="t-h3">{t.line}</p>
                 <p className="text-grey mt-3">{t.text}</p>
@@ -79,10 +82,12 @@ export default function AboutPage() {
             </li>
           ))}
         </ol>
+        </div>
       </section>
 
       {/* Beeldcompositie: materiaal en detail */}
-      <section className="wrap" aria-label="Details uit realisaties">
+      <section className="theme-kalk" aria-label="Details uit realisaties">
+        <div className="wrap py-[var(--section)]">
         <div className="grid-12 gap-y-[clamp(3.5rem,9vw,10rem)] items-end">
           <figure className="col-span-12 md:col-span-5 lg:col-span-4 lg:col-start-2" data-reveal>
             <Picture slug="uitbouw-leefruimte" id="13" alt="Detail van een kastfront in zwart eiken" sizes="(min-width:1024px) 34vw, (min-width:768px) 42vw, 100vw" />
@@ -91,14 +96,16 @@ export default function AboutPage() {
             <Picture slug="residentie-kalk-en-eik" id="04" alt="Eiken kastdeuren met houten grepen" sizes="(min-width:768px) 50vw, 100vw" ratio="4 / 5" />
           </figure>
         </div>
+        </div>
       </section>
 
       {/* Atelier */}
-      <section className="wrap py-[var(--section)]">
+      <section className="theme-dark">
+        <div className="wrap py-[var(--section)]">
         <div className="grid-12 gap-y-10 items-end">
           <div className="col-span-12 lg:col-span-7" data-reveal>
-            <p className="t-label text-grey mb-6">Atelier</p>
-            <h2 className="t-h1">
+            <p className="t-label rule text-accent mb-8">Atelier</p>
+            <h2 className="t-h1 t-caps !tracking-[0.06em]">
               {site.address.street}
               <br />
               {site.address.postalCode} {site.address.city}
@@ -108,6 +115,7 @@ export default function AboutPage() {
             <ArrowLink href="/projecten/">Bekijk onze projecten</ArrowLink>
             <ArrowLink href="/contact/">Neem contact op</ArrowLink>
           </div>
+        </div>
         </div>
       </section>
     </>

@@ -89,7 +89,7 @@ export function ContactForm() {
 
   if (status === "success") {
     return (
-      <div role="status" aria-live="polite" className="border-t border-ink pt-8">
+      <div role="status" aria-live="polite" className="border-t border-accent pt-8">
         <p className="t-h2">Bedankt.</p>
         <p className="t-lead text-grey mt-4">Je bericht is verzonden. We nemen zo snel mogelijk contact met je op.</p>
       </div>
