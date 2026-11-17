@@ -1,0 +1,115 @@
+import { Picture } from "@/components/Picture";
+import { ArrowLink } from "@/components/ui";
+import { site } from "@/content/site";
+import { pageMeta } from "@/lib/seo";
+
+export const metadata = pageMeta({
+  title: "Over ons",
+  description:
+    "MHD combineert drie generaties ervaring met een scherp oog voor materiaal, vorm en afwerking. Eigen atelier in Izegem.",
+  path: "/over-ons/",
+});
+
+const delay = (ms: number) => ({ "--reveal-delay": `${ms}ms` }) as React.CSSProperties;
+
+/*
+ * Ruimte voor later: zodra er foto's van het team, het atelier of het werkproces zijn,
+ * vervang je de projectbeelden hieronder (props `slug` + `id` van <Picture>) of voeg je
+ * een map fotos/over-ons/ toe en verwijs je daarnaar. Label ze dan ook zo in de alt-tekst.
+ */
+const themes = [
+  {
+    no: "01",
+    word: "Ervaring",
+    line: "Drie generaties vakmanschap.",
+    text: "Kennis van hout en schrijnwerk, doorgegeven van generatie op generatie.",
+  },
+  {
+    no: "02",
+    word: "Precisie",
+    line: "Aandacht voor elk detail.",
+    text: "Ontwerp en technische uitwerking gebeuren in eigen huis.",
+  },
+  {
+    no: "03",
+    word: "Maatwerk",
+    line: "Oplossingen afgestemd op de ruimte.",
+    text: `Gemaakt in ons eigen atelier in ${site.address.city}.`,
+  },
+];
+
+export default function AboutPage() {
+  return (
+    <>
+      {/* Opening */}
+      <section className="wrap pt-[clamp(4rem,10vw,10rem)] pb-[clamp(4rem,9vw,9rem)]">
+        <div className="grid-12 gap-y-10">
+          <div className="col-span-12 lg:col-span-9" data-reveal>
+            <p className="t-label text-grey mb-6">Over MHD</p>
+            <h1 className="t-display">Vakmanschap, generatie na generatie.</h1>
+          </div>
+          <p className="col-span-12 md:col-span-7 md:col-start-6 lg:col-span-4 lg:col-start-9 t-lead text-grey self-end" data-reveal style={delay(150)}>
+            MHD combineert drie generaties ervaring met een scherp oog voor materiaal, vorm en afwerking.
+          </p>
+        </div>
+      </section>
+
+      <div className="px-[var(--gutter)] md:px-0" data-reveal>
+        <Picture
+          slug="uitbouw-leefruimte"
+          id="01"
+          alt="Eethoek met eiken wandbekleding en maatkasten in zwart eiken"
+          sizes="100vw"
+          ratio="none"
+          className="aspect-[4/5] sm:aspect-[3/2] md:aspect-[21/9]"
+        />
+      </div>
+
+      {/* Thema's */}
+      <section className="wrap py-[var(--section)]" aria-label="Waar MHD voor staat">
+        <ol className="flex flex-col">
+          {themes.map((t, i) => (
+            <li key={t.no} className="grid-12 gap-y-4 border-t border-line py-[clamp(2.5rem,5vw,4.5rem)] last:border-b" data-reveal style={delay(i * 80)}>
+              <span className="col-span-2 lg:col-span-1 t-label text-grey t-num pt-2">{t.no}</span>
+              <h2 className="col-span-10 lg:col-span-4 t-h2">{t.word}</h2>
+              <div className="col-span-12 md:col-span-10 md:col-start-3 lg:col-span-5 lg:col-start-7">
+                <p className="t-h3">{t.line}</p>
+                <p className="text-grey mt-3">{t.text}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      {/* Beeldcompositie: materiaal en detail */}
+      <section className="wrap" aria-label="Details uit realisaties">
+        <div className="grid-12 gap-y-[clamp(3.5rem,9vw,10rem)] items-end">
+          <figure className="col-span-12 md:col-span-5 lg:col-span-4 lg:col-start-2" data-reveal>
+            <Picture slug="uitbouw-leefruimte" id="13" alt="Detail van een kastfront in zwart eiken" sizes="(min-width:1024px) 34vw, (min-width:768px) 42vw, 100vw" />
+          </figure>
+          <figure className="col-span-12 md:col-span-6 md:col-start-7" data-reveal style={delay(150)}>
+            <Picture slug="residentie-kalk-en-eik" id="04" alt="Eiken kastdeuren met houten grepen" sizes="(min-width:768px) 50vw, 100vw" ratio="4 / 5" />
+          </figure>
+        </div>
+      </section>
+
+      {/* Atelier */}
+      <section className="wrap py-[var(--section)]">
+        <div className="grid-12 gap-y-10 items-end">
+          <div className="col-span-12 lg:col-span-7" data-reveal>
+            <p className="t-label text-grey mb-6">Atelier</p>
+            <h2 className="t-h1">
+              {site.address.street}
+              <br />
+              {site.address.postalCode} {site.address.city}
+            </h2>
+          </div>
+          <div className="col-span-12 lg:col-span-4 lg:col-start-9 flex flex-col gap-2 lg:items-end" data-reveal style={delay(150)}>
+            <ArrowLink href="/projecten/">Bekijk onze projecten</ArrowLink>
+            <ArrowLink href="/contact/">Neem contact op</ArrowLink>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
