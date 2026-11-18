@@ -43,8 +43,12 @@ export function Footer() {
           </FooterCol>
         </div>
 
-        <div className="mt-24 md:mt-32 pt-6 border-t border-line flex flex-col sm:flex-row gap-3 justify-between t-small text-grey">
-          <p>© {site.name} — <Year /><span className="mx-3 text-line" aria-hidden="true">|</span>Btw {site.vat}</p>
+        <div className="mt-24 md:mt-32 pt-7 border-t border-line flex flex-col sm:flex-row gap-4 justify-between t-label t-num !font-normal !tracking-[0.2em] text-grey">
+          <p className="flex flex-col sm:flex-row gap-x-5 gap-y-3">
+            <span>© {site.name} — <Year /></span>
+            <span className="hidden sm:inline text-line" aria-hidden="true">|</span>
+            <span>BTW {site.vat}</span>
+          </p>
           <Link href="/privacy/" className="link-line self-start">Privacybeleid</Link>
         </div>
       </div>
