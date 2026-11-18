@@ -13,17 +13,19 @@ type Props = {
   className?: string;
   /** Subtiele vergroting bij hover van een omhullende `.group` */
   zoom?: boolean;
+  /** "span" binnen een knop (geldige HTML), anders "div" */
+  as?: "div" | "span";
 };
 
 /**
  * Responsive projectfoto. Het kader reserveert altijd zijn ruimte (geen layout shift),
  * het beeld vult het kader met `object-fit: cover`.
  */
-export function Picture({ slug, id, alt, sizes, ratio, priority, focus, className = "", zoom }: Props) {
+export function Picture({ slug, id, alt, sizes, ratio, priority, focus, className = "", zoom, as: Tag = "div" }: Props) {
   const img = projectImage(slug, id);
   return (
-    <div
-      className={`media ${zoom ? "media--zoom" : ""} ${className}`}
+    <Tag
+      className={`media block ${zoom ? "media--zoom" : ""} ${className}`}
       style={ratio === "none" ? undefined : { aspectRatio: ratio ?? `${img.width} / ${img.height}` }}
       data-reveal-media
     >
@@ -41,6 +43,6 @@ export function Picture({ slug, id, alt, sizes, ratio, priority, focus, classNam
         fetchPriority={priority ? "high" : undefined}
         style={focus ? { objectPosition: focus } : undefined}
       />
-    </div>
+    </Tag>
   );
 }

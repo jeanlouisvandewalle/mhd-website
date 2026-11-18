@@ -2,6 +2,8 @@ import Link from "next/link";
 import { Picture } from "./Picture";
 import { Arrow } from "./Logo";
 import { projectImage } from "@/lib/images";
+import { lightboxData } from "@/lib/lightbox";
+import { ProjectTileLink } from "./LightboxTrigger";
 import { categories, categoryLabel, imageAlt, type Category, type Project } from "@/content/projects";
 
 type Slot = { cls: string; shape: "landscape" | "portrait" | "wide"; sizes: string };
@@ -67,7 +69,12 @@ export function ProjectCard({
   // Brede uitsnede is op mobiel te smal: daar valt ze terug op 3/2.
   const ratio = RATIO[shape];
   return (
-    <Link href={`/projecten/${p.slug}/`} className="group block" aria-label={`${p.title} — ${categoryLabel(p.categories[0])}`}>
+    <ProjectTileLink
+      href={`/projecten/${p.slug}/`}
+      data={lightboxData(p, { link: true })}
+      className="group block cursor-zoom-in"
+      ariaLabel={`${p.title} — ${categoryLabel(p.categories[0])}: bekijk de foto's`}
+    >
       <Picture
         slug={p.slug}
         id={id}
@@ -90,7 +97,7 @@ export function ProjectCard({
           <span>{String(index).padStart(2, "0")}</span>
         </div>
       </div>
-    </Link>
+    </ProjectTileLink>
   );
 }
 

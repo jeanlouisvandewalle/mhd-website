@@ -1,5 +1,7 @@
 import { Picture } from "./Picture";
 import { projectImage } from "@/lib/images";
+import { lightboxData } from "@/lib/lightbox";
+import { ZoomButton } from "./LightboxTrigger";
 import type { Project, ProjectImage } from "@/content/projects";
 
 type Img = ProjectImage & { portrait: boolean };
@@ -54,8 +56,11 @@ export function ProjectGallery({ project, exclude }: { project: Project; exclude
     .filter((g) => g.id !== exclude)
     .map((g) => ({ ...g, portrait: projectImage(project.slug, g.id).portrait }));
   const rows = compose(imgs);
+  const lb = lightboxData(project);
   const pic = (img: Img, sizes: string) => (
-    <Picture slug={project.slug} id={img.id} alt={img.alt} sizes={sizes} focus={img.focus} />
+    <ZoomButton data={lb} index={Math.max(0, lb.images.findIndex((x) => x.src === projectImage(project.slug, img.id).src))} label={img.alt}>
+      <Picture slug={project.slug} id={img.id} alt={img.alt} sizes={sizes} focus={img.focus} zoom as="span" />
+    </ZoomButton>
   );
 
   return (

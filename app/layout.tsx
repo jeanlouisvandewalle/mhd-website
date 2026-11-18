@@ -3,6 +3,7 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { RevealObserver } from "@/components/RevealObserver";
+import { LightboxHost } from "@/components/Lightbox";
 import { site } from "@/content/site";
 
 export const metadata: Metadata = {
@@ -63,6 +64,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <main id="inhoud" className="flex-1">{children}</main>
         <Footer />
         <RevealObserver />
+        <LightboxHost />
       </body>
     </html>
   );
