@@ -44,7 +44,7 @@ export function Footer() {
         </div>
 
         <div className="mt-24 md:mt-32 pt-6 border-t border-line flex flex-col sm:flex-row gap-3 justify-between t-small text-grey">
-          <p>© {site.name} — <Year /></p>
+          <p>© {site.name} — <Year /><span className="mx-3 text-line" aria-hidden="true">|</span>Btw {site.vat}</p>
           <Link href="/privacy/" className="link-line self-start">Privacybeleid</Link>
         </div>
       </div>

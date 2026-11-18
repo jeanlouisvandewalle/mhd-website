@@ -18,6 +18,8 @@ export const site = {
     city: "Izegem",
     country: "BE",
   },
+  /** Ondernemingsnummer / btw-nummer (wettelijk verplicht op de website) */
+  vat: "BE 0500.534.549",
   mapsUrl: "https://goo.gl/maps/Yra4PKhXhCvD6VE38",
   /**
    * Verzendadres van het contactformulier.

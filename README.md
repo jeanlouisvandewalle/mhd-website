@@ -128,8 +128,7 @@ vervang je `content/projects.ts` door een fetch tijdens de build. De componenten
 - [ ] **Jaartallen.** Die zijn niet bekend en worden daarom niet getoond. Je kan ze toevoegen via `year`.
 - [ ] **Fotorechten en credits.** De bestanden van project 1 heten `HR_Sophie De Bel-*.jpg`. Ga na of dit een fotograaf is
       en of een vermelding gewenst is.
-- [ ] **Ondernemingsnummer.** De Belgische wet verplicht dat een bedrijfswebsite het ondernemingsnummer (KBO) vermeldt.
-      Dat staat niet op de huidige site. Voeg het toe in `content/site.ts` en de footer.
+- [x] **Ondernemingsnummer.** BE 0500.534.549 staat in de footer en in de structured data. Je past het aan in `content/site.ts`.
 - [ ] **Teamfoto, atelierfoto's, beelden van het werkproces** voor de pagina Over ons. Daar staan nu detailbeelden uit projecten.
 
 **Technisch**

@@ -37,6 +37,7 @@ const jsonLd = {
   logo: `${site.url}/logo.svg`,
   telephone: "+32475267331",
   email: site.email,
+  vatID: site.vat,
   address: {
     "@type": "PostalAddress",
     streetAddress: site.address.street,
