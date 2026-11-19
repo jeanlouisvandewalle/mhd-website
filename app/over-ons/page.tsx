@@ -41,18 +41,19 @@ const themes = [
 export default function AboutPage() {
   return (
     <>
-      {/* Opening */}
-      <section className="theme-dark">
-        <div className="wrap pt-[clamp(5rem,11vw,11rem)] pb-[clamp(4rem,9vw,9rem)]">
-        <div className="grid-12 gap-y-10">
-          <div className="col-span-12 lg:col-span-9" data-reveal>
-            <p className="t-label rule text-accent mb-8">Over MHD</p>
-            <h1 className="t-display">Vakmanschap, generatie na generatie.</h1>
+      {/* Opening — Drie generaties vakmanschap */}
+      <section className="theme-kalk" aria-labelledby="about-title">
+        <div className="wrap pt-[clamp(5rem,11vw,11rem)] pb-[var(--section)]">
+          <div className="grid-12 gap-y-12 items-center">
+            <div className="col-span-12 md:col-span-6 lg:col-span-5 lg:col-start-2">
+              <Picture slug="residentie-kalk-en-eik" id="03" alt="Afgeronde kastwand in kalkafwerking" sizes="(min-width:1024px) 42vw, (min-width:768px) 50vw, 100vw" ratio="4 / 5" priority />
+            </div>
+            <div className="col-span-12 md:col-span-5 md:col-start-8 lg:col-span-4 lg:col-start-8" data-reveal style={delay(150)}>
+              <p className="t-label rule text-accent mb-8">Over MHD</p>
+              <h1 id="about-title" className="t-h2">Drie generaties vakmanschap.</h1>
+              <p className="t-lead text-grey mt-6">Een verhaal van ervaring, precisie en aandacht voor materiaal.</p>
+            </div>
           </div>
-          <p className="col-span-12 md:col-span-7 md:col-start-6 lg:col-span-4 lg:col-start-9 t-lead text-grey self-end" data-reveal style={delay(150)}>
-            MHD combineert drie generaties ervaring met een scherp oog voor materiaal, vorm en afwerking.
-          </p>
-        </div>
         </div>
       </section>
 

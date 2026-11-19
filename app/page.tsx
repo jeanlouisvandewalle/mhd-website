@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Picture } from "@/components/Picture";
 import { ProjectGrid } from "@/components/projects";
 import { ArrowLink } from "@/components/ui";
+import { Fade } from "@/components/Fade";
 import { Arrow } from "@/components/Logo";
 import { sortedProjects } from "@/content/projects";
 import { site } from "@/content/site";
@@ -81,7 +82,7 @@ export default function Home() {
 
       {/* 02 — Expertise op zwart, direct onder de hero */}
       <section className="theme-dark" aria-labelledby="expertise-title">
-        <div className="wrap pt-[clamp(4rem,8vw,8rem)] pb-[var(--section)]">
+        <div className="wrap pt-[clamp(4rem,8vw,8rem)] pb-[clamp(3rem,6vw,6rem)]">
           <SectionHead id="expertise-title" label="Expertise" title="Drie disciplines, één handschrift" />
 
           <div className="flex flex-col gap-[clamp(5rem,10vw,11rem)]">
@@ -110,9 +111,12 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Zachte overgang zwart → kalkwit */}
+      <Fade from="ink" to="kalk" />
+
       {/* 03 — Geselecteerde projecten op kalkwit */}
       <section className="theme-light" aria-labelledby="selected-title">
-        <div className="wrap py-[var(--section)]">
+        <div className="wrap pt-[clamp(2rem,4vw,4rem)] pb-[clamp(3rem,6vw,6rem)]">
           <SectionHead id="selected-title" label="Portfolio" title="Geselecteerde projecten" count={featured.length} />
           <ProjectGrid projects={featured} layout="home" />
           <div className="mt-[clamp(4rem,8vw,8rem)] flex justify-end" data-reveal>
@@ -121,28 +125,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 04 — Over MHD op kalkwit */}
-      <section className="theme-kalk" aria-labelledby="about-title">
-        <div className="wrap py-[var(--section)]">
-          <div className="grid-12 gap-y-12 items-center">
-            <div className="col-span-12 md:col-span-6 lg:col-span-5 lg:col-start-2" data-reveal>
-              <Picture slug="residentie-kalk-en-eik" id="03" alt="Afgeronde kastwand in kalkafwerking" sizes="(min-width:1024px) 42vw, (min-width:768px) 50vw, 100vw" ratio="4 / 5" />
-            </div>
-            <div className="col-span-12 md:col-span-5 md:col-start-8 lg:col-span-4 lg:col-start-8" data-reveal style={delay(150)}>
-              <p className="t-label rule text-accent mb-8">Over MHD</p>
-              <h2 id="about-title" className="t-h2">Drie generaties vakmanschap.</h2>
-              <p className="t-lead text-grey mt-6">Een verhaal van ervaring, precisie en aandacht voor materiaal.</p>
-              <div className="mt-10">
-                <ArrowLink href="/over-ons/">Meer over MHD</ArrowLink>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Zachte overgang kalkwit → zwart */}
+      <Fade from="kalk" to="ink" />
 
-      {/* 05 — Contact op zwart, loopt over in de footer */}
+      {/* 04 — Contact op zwart, loopt over in de footer */}
       <section className="theme-dark" aria-labelledby="contact-title">
-        <div className="wrap pt-[var(--section)]">
+        <div className="wrap pt-[clamp(2rem,4vw,4rem)]">
           <div className="grid-12 gap-y-10 items-end">
             <div className="col-span-12 lg:col-span-9" data-reveal>
               <p className="t-label rule text-accent mb-8">Contact</p>
