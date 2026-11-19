@@ -70,7 +70,7 @@ export default function AboutPage() {
 
       {/* Thema's */}
       <section className="theme-light" aria-label="Waar MHD voor staat">
-        <div className="wrap py-[var(--section)]">
+        <div className="wrap pt-[var(--section)] pb-[clamp(3rem,5vw,5rem)]">
         <ol className="flex flex-col">
           {themes.map((t, i) => (
             <li key={t.no} className="grid-12 gap-y-4 border-t border-line py-[clamp(2.5rem,5vw,4.5rem)] last:border-b" data-reveal style={delay(i * 80)}>
@@ -88,7 +88,7 @@ export default function AboutPage() {
 
       {/* Beeldcompositie: materiaal en detail */}
       <section className="theme-kalk" aria-label="Details uit realisaties">
-        <div className="wrap py-[var(--section)]">
+        <div className="wrap pt-0 pb-[var(--section)]">
         <div className="grid-12 gap-y-[clamp(3.5rem,9vw,10rem)] items-end">
           <figure className="col-span-12 md:col-span-5 lg:col-span-4 lg:col-start-2" data-reveal>
             <Picture slug="uitbouw-leefruimte" id="13" alt="Detail van een kastfront in zwart eiken" sizes="(min-width:1024px) 34vw, (min-width:768px) 42vw, 100vw" />

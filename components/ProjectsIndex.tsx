@@ -17,9 +17,11 @@ export function ProjectsIndex({ category }: { category?: Category }) {
               <p className="t-label rule text-accent mb-8">{cat ? "Projecten" : "Portfolio"}</p>
               <h1 className="t-display t-caps !tracking-[0.06em]">{cat ? cat.label : "Projecten"}</h1>
             </div>
-            <p className="col-span-12 lg:col-span-4 t-lead text-grey lg:text-right" data-reveal style={{ "--reveal-delay": "120ms" } as React.CSSProperties}>
-              {cat ? cat.intro : "Een selectie van ons werk."}
-            </p>
+            {cat ? (
+              <p className="col-span-12 lg:col-span-4 t-lead text-grey lg:text-right" data-reveal style={{ "--reveal-delay": "120ms" } as React.CSSProperties}>
+                {cat.intro}
+              </p>
+            ) : null}
           </div>
           <div className="mt-[clamp(4rem,7vw,7rem)] pt-6 border-t border-line" data-reveal>
             <CategoryFilters active={category ?? "alle"} counts={counts} />

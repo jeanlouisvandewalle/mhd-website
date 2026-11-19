@@ -2,7 +2,6 @@ import Link from "next/link";
 import { Picture } from "@/components/Picture";
 import { ProjectGrid } from "@/components/projects";
 import { ArrowLink } from "@/components/ui";
-import { Fade } from "@/components/Fade";
 import { Arrow } from "@/components/Logo";
 import { sortedProjects } from "@/content/projects";
 import { site } from "@/content/site";
@@ -82,7 +81,7 @@ export default function Home() {
 
       {/* 02 — Expertise op zwart, direct onder de hero */}
       <section className="theme-dark" aria-labelledby="expertise-title">
-        <div className="wrap pt-[clamp(4rem,8vw,8rem)] pb-[clamp(3rem,6vw,6rem)]">
+        <div className="wrap pt-[clamp(4rem,8vw,8rem)] pb-[var(--section)]">
           <SectionHead id="expertise-title" label="Expertise" title="Drie disciplines, één handschrift" />
 
           <div className="flex flex-col gap-[clamp(5rem,10vw,11rem)]">
@@ -111,12 +110,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Zachte overgang zwart → kalkwit */}
-      <Fade from="ink" to="kalk" />
-
       {/* 03 — Geselecteerde projecten op kalkwit */}
       <section className="theme-light" aria-labelledby="selected-title">
-        <div className="wrap pt-[clamp(2rem,4vw,4rem)] pb-[clamp(3rem,6vw,6rem)]">
+        <div className="wrap pt-[var(--section)] pb-[clamp(4rem,7vw,7rem)]">
           <SectionHead id="selected-title" label="Portfolio" title="Geselecteerde projecten" count={featured.length} />
           <ProjectGrid projects={featured} layout="home" />
           <div className="mt-[clamp(4rem,8vw,8rem)] flex justify-end" data-reveal>
@@ -125,12 +121,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Zachte overgang kalkwit → zwart */}
-      <Fade from="kalk" to="ink" />
-
       {/* 04 — Contact op zwart, loopt over in de footer */}
       <section className="theme-dark" aria-labelledby="contact-title">
-        <div className="wrap pt-[clamp(2rem,4vw,4rem)]">
+        <div className="wrap pt-[clamp(4rem,7vw,7rem)]">
           <div className="grid-12 gap-y-10 items-end">
             <div className="col-span-12 lg:col-span-9" data-reveal>
               <p className="t-label rule text-accent mb-8">Contact</p>
