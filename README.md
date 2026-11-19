@@ -18,8 +18,8 @@ De map `out/` is een volledig statische website. Upload ze naar eender welke hos
 
 *Photography first. Design second. Words last.* Ingetogen, maar uitgesproken luxueus.
 
-- **Kleur**: diep zwart `#0B0B0B` en wit vormen de basis. Ze worden aangevuld met een warm kalkwit `#F2EFE9`,
-  afgeleid van de kalkafwerking in de realisaties, en een fijn bronsaccent (`#8C7148` op licht, `#C3A676` op donker)
+- **Kleur**: diep zwart `#0B0B0B` en warm kalkwit `#F2EFE9` vormen de basis. Het kalkwit, afgeleid van de
+  kalkafwerking in de realisaties, vervangt overal het zuivere wit. Daarbij komt een fijn bronsaccent (`#84693F` op licht, `#C3A676` op donker)
   voor lijnen, nummers en labels.
 - **Ritme**: secties wisselen tussen zwart, wit en kalkwit (klassen `theme-dark`, `theme-light` en `theme-kalk`).
   Header en footer zijn altijd zwart.

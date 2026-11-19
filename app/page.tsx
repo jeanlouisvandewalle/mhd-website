@@ -65,13 +65,13 @@ export default function Home() {
         <div className="relative z-10 h-full wrap flex flex-col justify-end pb-[clamp(2.5rem,6vw,5.5rem)]">
           <div className="grid-12 gap-y-8 items-end">
             <div className="col-span-12 lg:col-span-9">
-              <p className="t-label rule text-[#f4f1ec]/80 mb-7">{site.name}</p>
-              <h1 id="hero-title" className="t-h1 t-caps !tracking-[0.07em] text-[#f4f1ec] max-w-[16ch]">
+              <p className="t-label rule text-[#f2efe9]/80 mb-7">{site.name}</p>
+              <h1 id="hero-title" className="t-h1 t-caps !tracking-[0.07em] text-[#f2efe9] max-w-[16ch]">
                 Maatwerk in zijn puurste vorm
               </h1>
             </div>
-            <div className="col-span-12 lg:col-span-3 flex flex-col gap-3 lg:items-end text-[#f4f1ec]">
-              <p className="t-label text-[#f4f1ec]/80">{site.tagline}</p>
+            <div className="col-span-12 lg:col-span-3 flex flex-col gap-3 lg:items-end text-[#f2efe9]">
+              <p className="t-label text-[#f2efe9]/80">{site.tagline}</p>
               <ArrowLink href="/projecten/">Bekijk projecten</ArrowLink>
             </div>
           </div>

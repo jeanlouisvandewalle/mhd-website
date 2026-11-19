@@ -64,10 +64,10 @@ export default async function ProjectPage({ params }: PageProps<"/projecten/[slu
         />
         {/* 2 — Titel */}
         <div className="relative z-10 h-full wrap flex flex-col justify-end pb-[clamp(2.5rem,5vw,5rem)]">
-          <p className="t-label rule text-[#f4f1ec]/80 mb-7">
+          <p className="t-label rule text-[#f2efe9]/80 mb-7">
             <Link href={`/projecten/${p.categories[0]}/`} className="link-line">{categoryLabel(p.categories[0])}</Link>
           </p>
-          <h1 className="t-h1 t-caps !tracking-[0.07em] text-[#f4f1ec] max-w-[18ch]">{p.title}</h1>
+          <h1 className="t-h1 t-caps !tracking-[0.07em] text-[#f2efe9] max-w-[18ch]">{p.title}</h1>
         </div>
       </section>
 

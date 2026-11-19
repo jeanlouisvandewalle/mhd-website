@@ -8,7 +8,7 @@
    ========================================================================== */
 
 @theme {
-  --color-white: #ffffff;
+  --color-white: #f2efe9;      /* "wit" van de site = warm kalkwit */
   --color-ink: #0b0b0b;       /* diep zwart */
   --color-coal: #161616;      /* zwart voor vlakken op zwart */
   --color-kalk: #f2efe9;      /* warm kalkwit */
@@ -36,11 +36,11 @@
 }
 
 :root {
-  --bg: #ffffff;
+  --bg: #f2efe9;                 /* kalkwit vervangt overal het wit */
   --fg: #0b0b0b;
-  --muted: #66625b;              /* 5,9:1 op wit */
-  --line: #e2ded6;
-  --accent: #8c7148;             /* brons, 4,6:1 op wit */
+  --muted: #5f5b54;              /* 5,9:1 op kalkwit */
+  --line: #d9d4ca;
+  --accent: #84693f;             /* brons, 4,6:1 op kalkwit */
 
   --gutter: clamp(20px, 4.4vw, 72px);
   --col-gap: clamp(16px, 2vw, 32px);
@@ -100,9 +100,9 @@
 @layer components {
   /* ---------- thema's ------------------------------------------------------ */
 
-  .theme-light { --bg: #ffffff; --fg: #0b0b0b; --muted: #66625b; --line: #e2ded6; --accent: #8c7148; }
+  .theme-light { --bg: #f2efe9; --fg: #0b0b0b; --muted: #5f5b54; --line: #d9d4ca; --accent: #84693f; }
   .theme-kalk  { --bg: #f2efe9; --fg: #0b0b0b; --muted: #5f5b54; --line: #d9d4ca; --accent: #84693f; }
-  .theme-dark  { --bg: #0b0b0b; --fg: #f4f1ec; --muted: #a29d94; --line: rgba(244, 241, 236, 0.16); --accent: #c3a676; color-scheme: dark; }
+  .theme-dark  { --bg: #0b0b0b; --fg: #f2efe9; --muted: #a29d94; --line: rgba(242, 239, 233, 0.16); --accent: #c3a676; color-scheme: dark; }
   .theme-light, .theme-kalk, .theme-dark { background: var(--bg); color: var(--fg); }
 
   /* ---------- layout ------------------------------------------------------- */
@@ -259,11 +259,11 @@
     top: 0;
     z-index: 50;
     background: var(--color-ink);
-    color: #f4f1ec;
-    border-bottom: 1px solid rgba(244, 241, 236, 0);
+    color: #f2efe9;
+    border-bottom: 1px solid rgba(242, 239, 233, 0);
     transition: border-color 500ms ease;
   }
-  .site-header.is-compact { border-color: rgba(244, 241, 236, 0.12); }
+  .site-header.is-compact { border-color: rgba(242, 239, 233, 0.12); }
   .site-header__bar {
     height: var(--header-h);
     display: flex;
@@ -287,7 +287,7 @@
     min-width: 260px;
     padding: 26px 28px 28px;
     background: var(--color-ink);
-    border: 1px solid rgba(244, 241, 236, 0.12);
+    border: 1px solid rgba(242, 239, 233, 0.12);
     opacity: 0;
     visibility: hidden;
     transform: translateY(-4px);
@@ -306,7 +306,7 @@
     inset: 0;
     z-index: 49;
     background: var(--color-ink);
-    color: #f4f1ec;
+    color: #f2efe9;
     padding-top: var(--header-h);
     display: flex;
     flex-direction: column;
