@@ -50,7 +50,7 @@ export default function Home() {
 
   return (
     <>
-      {/* 01 — Hero: beeldvullend, tekst op een zachte verdonkering */}
+      {/* 01 — Hero: beeldvullend, vloeit onderaan over in het zwarte Expertise-blok */}
       <section aria-labelledby="hero-title" className="theme-dark relative h-[calc(88svh-var(--header-h))] min-h-[560px] md:h-[calc(100svh-var(--header-h))] md:min-h-[620px] overflow-hidden">
         <Picture
           slug="residentie-kalk-en-eik"
@@ -60,40 +60,57 @@ export default function Home() {
           priority
           ratio="none"
           focus="38% 50%"
-          className="!absolute inset-0 h-full hero-shade hero-zoom"
+          className="!absolute inset-0 h-full hero-shade hero-shade--fade hero-zoom"
         />
         <div className="relative z-10 h-full wrap flex flex-col justify-end pb-[clamp(2.5rem,6vw,5.5rem)]">
           <div className="grid-12 gap-y-8 items-end">
-            <div className="col-span-12 lg:col-span-9">
+            <div className="col-span-12 lg:col-span-8">
               <p className="t-label rule text-[#f2efe9]/80 mb-7">{site.name}</p>
               <h1 id="hero-title" className="t-h1 t-caps !tracking-[0.07em] text-[#f2efe9] max-w-[16ch]">
                 Maatwerk in zijn puurste vorm
               </h1>
             </div>
-            <div className="col-span-12 lg:col-span-3 flex flex-col gap-3 lg:items-end text-[#f2efe9]">
-              <p className="t-label text-[#f2efe9]/80">{site.tagline}</p>
+            {/* Tagline en link delen exact dezelfde rechterrand; de -mr compenseert de letterspatiëring na de laatste letter */}
+            <div className="col-span-12 lg:col-span-4 lg:col-start-9 flex flex-col gap-3 lg:items-end text-[#f2efe9]">
+              <p className="t-label text-[#f2efe9]/80 whitespace-nowrap max-sm:text-[clamp(8.5px,2.7vw,10px)] max-sm:!tracking-[0.16em] lg:-mr-[0.26em]">{site.tagline}</p>
               <ArrowLink href="/projecten/">Bekijk projecten</ArrowLink>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 02 — Introductie op zwart */}
-      <section className="theme-dark">
-        <div className="wrap py-[var(--section)]">
-          <div className="grid-12 gap-y-12">
-            <p className="col-span-12 lg:col-span-2 t-label rule text-accent pt-4" data-reveal>Maatwerk</p>
-            <h2 className="col-span-12 lg:col-span-9 lg:col-start-4 t-display" data-reveal style={delay(100)}>
-              Maatwerk, tot in het&nbsp;detail.
-            </h2>
-            <p className="col-span-12 md:col-span-7 md:col-start-6 lg:col-span-4 lg:col-start-9 t-lead text-grey" data-reveal style={delay(220)}>
-              Van interieur tot exterieur. Van ontwerp tot realisatie.
-            </p>
+      {/* 02 — Expertise op zwart, direct onder de hero */}
+      <section className="theme-dark" aria-labelledby="expertise-title">
+        <div className="wrap pt-[clamp(4rem,8vw,8rem)] pb-[var(--section)]">
+          <SectionHead id="expertise-title" label="Expertise" title="Drie disciplines, één handschrift" />
+
+          <div className="flex flex-col gap-[clamp(5rem,10vw,11rem)]">
+            <Link href={expertise[0].href} className="group grid-12 gap-y-10 items-end" data-reveal>
+              <div className="col-span-12 lg:col-span-7">
+                <Picture slug={expertise[0].slug} id={expertise[0].id} alt={expertise[0].alt} sizes="(min-width:1024px) 58vw, 100vw" ratio="4 / 3" zoom />
+              </div>
+              <Discipline {...expertise[0]} className="col-span-12 md:col-span-7 lg:col-span-5 lg:col-start-8 lg:pl-[clamp(0rem,2vw,2rem)]" />
+            </Link>
+
+            <Link href={expertise[1].href} className="group grid-12 gap-y-10 items-end" data-reveal>
+              <Discipline {...expertise[1]} className="col-span-12 md:col-span-7 lg:col-span-5 lg:col-start-1 order-2 lg:order-1" />
+              <div className="col-span-12 lg:col-span-7 lg:col-start-6 order-1 lg:order-2">
+                <Picture slug={expertise[1].slug} id={expertise[1].id} alt={expertise[1].alt} sizes="(min-width:1024px) 58vw, 100vw" ratio="3 / 2" zoom />
+              </div>
+            </Link>
+
+            {/* Totaalprojecten: zelfde opbouw als Interieur — foto links, tekst rechts */}
+            <Link href={expertise[2].href} className="group grid-12 gap-y-10 items-end" data-reveal>
+              <div className="col-span-12 lg:col-span-7">
+                <Picture slug={expertise[2].slug} id={expertise[2].id} alt={expertise[2].alt} sizes="(min-width:1024px) 58vw, 100vw" ratio="4 / 3" zoom focus="50% 60%" />
+              </div>
+              <Discipline {...expertise[2]} className="col-span-12 md:col-span-7 lg:col-span-5 lg:col-start-8 lg:pl-[clamp(0rem,2vw,2rem)]" />
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* 03 — Geselecteerde projecten */}
+      {/* 03 — Geselecteerde projecten op kalkwit */}
       <section className="theme-light" aria-labelledby="selected-title">
         <div className="wrap py-[var(--section)]">
           <SectionHead id="selected-title" label="Portfolio" title="Geselecteerde projecten" count={featured.length} />
@@ -104,37 +121,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 04 — Expertise op zwart */}
-      <section className="theme-dark" aria-labelledby="expertise-title">
-        <div className="wrap py-[var(--section)]">
-          <SectionHead id="expertise-title" label="Expertise" title="Drie disciplines, één handschrift" />
-
-          <div className="flex flex-col gap-[clamp(5rem,10vw,11rem)]">
-            <Link href={expertise[0].href} className="group grid-12 gap-y-10 items-end" data-reveal>
-              <div className="col-span-12 lg:col-span-7">
-                <Picture slug={expertise[0].slug} id={expertise[0].id} alt={expertise[0].alt} sizes="(min-width:1024px) 58vw, 100vw" ratio="4 / 3" zoom />
-              </div>
-              <Discipline {...expertise[0]} className="col-span-12 md:col-span-6 lg:col-span-4 lg:col-start-9" />
-            </Link>
-
-            <Link href={expertise[1].href} className="group grid-12 gap-y-10 items-end" data-reveal>
-              <Discipline {...expertise[1]} className="col-span-12 md:col-span-6 lg:col-span-3 lg:col-start-2 order-2 lg:order-1" />
-              <div className="col-span-12 lg:col-span-7 lg:col-start-6 order-1 lg:order-2">
-                <Picture slug={expertise[1].slug} id={expertise[1].id} alt={expertise[1].alt} sizes="(min-width:1024px) 58vw, 100vw" ratio="3 / 2" zoom />
-              </div>
-            </Link>
-
-            <Link href={expertise[2].href} className="group grid-12 gap-y-10" data-reveal>
-              <div className="col-span-12">
-                <Picture slug={expertise[2].slug} id={expertise[2].id} alt={expertise[2].alt} sizes="100vw" ratio="21 / 9" zoom className="max-md:!aspect-[4/3]" focus="50% 60%" />
-              </div>
-              <Discipline {...expertise[2]} className="col-span-12 md:col-span-6 lg:col-span-4 lg:col-start-5" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* 05 — Over MHD op kalkwit */}
+      {/* 04 — Over MHD op kalkwit */}
       <section className="theme-kalk" aria-labelledby="about-title">
         <div className="wrap py-[var(--section)]">
           <div className="grid-12 gap-y-12 items-center">
@@ -153,7 +140,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 06 — Contact op zwart, loopt over in de footer */}
+      {/* 05 — Contact op zwart, loopt over in de footer */}
       <section className="theme-dark" aria-labelledby="contact-title">
         <div className="wrap pt-[var(--section)]">
           <div className="grid-12 gap-y-10 items-end">
@@ -188,7 +175,7 @@ function Discipline({ no, title, text, className = "" }: { no: string; title: st
   return (
     <div className={className}>
       <p className="t-label text-accent t-num mb-6">{no}</p>
-      <h3 className="t-h2 t-caps !tracking-[0.08em]">{title}</h3>
+      <h3 className="t-caps !tracking-[0.08em] text-[clamp(1.5rem,2.6vw,2.25rem)] leading-[1.15]">{title}</h3>
       <p className="text-grey mt-5">{text}</p>
       <span className="arrow-link mt-8">
         <span className="label">Bekijk {title.toLowerCase()}</span>

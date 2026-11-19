@@ -221,6 +221,12 @@
       linear-gradient(0deg, rgba(11, 11, 11, 0.78) 0%, rgba(11, 11, 11, 0.25) 42%, rgba(11, 11, 11, 0) 65%);
     pointer-events: none;
   }
+  /* Variant die onderaan volledig overvloeit in het zwart van de volgende sectie */
+  .hero-shade--fade::after {
+    background:
+      linear-gradient(180deg, rgba(11, 11, 11, 0.35) 0%, rgba(11, 11, 11, 0) 22%),
+      linear-gradient(0deg, #0b0b0b 0%, rgba(11, 11, 11, 0.88) 14%, rgba(11, 11, 11, 0.4) 42%, rgba(11, 11, 11, 0) 68%);
+  }
   .hero-zoom img { animation: hero-in 2600ms var(--ease-out-soft) both; }
   @keyframes hero-in { from { transform: scale(1.06); opacity: 0; } to { transform: scale(1); opacity: 1; } }
 
