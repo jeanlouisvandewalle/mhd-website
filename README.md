@@ -21,7 +21,7 @@ De map `out/` is een volledig statische website. Upload ze naar eender welke hos
 - **Kleur**: diep zwart `#0B0B0B` en warm kalkwit `#F2EFE9` vormen de basis. Het kalkwit, afgeleid van de
   kalkafwerking in de realisaties, vervangt overal het zuivere wit. Daarbij komt een fijn bronsaccent (`#84693F` op licht, `#C3A676` op donker)
   voor lijnen, nummers en labels.
-- **Ritme**: secties wisselen tussen zwart, wit en kalkwit (klassen `theme-dark`, `theme-light` en `theme-kalk`).
+- **Ritme**: secties wisselen tussen zwart en kalkwit (klassen `theme-dark`, `theme-light` en `theme-kalk`; licht en kalk zijn nu dezelfde kleur).
   Header en footer zijn altijd zwart.
 - **Fotografie in originele kleuren** als bouwsteen van de layout. Hero's vullen het scherm, met een zachte verdonkering
   onderaan voor leesbare tekst.
