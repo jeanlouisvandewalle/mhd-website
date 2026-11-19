@@ -81,7 +81,7 @@ export default function Home() {
 
       {/* 02 — Expertise op zwart, direct onder de hero */}
       <section className="theme-dark" aria-labelledby="expertise-title">
-        <div className="wrap pt-[clamp(4rem,8vw,8rem)] pb-[var(--section)]">
+        <div className="wrap pt-[clamp(4rem,8vw,8rem)] pb-[clamp(4rem,7vw,7rem)]">
           <SectionHead id="expertise-title" label="Expertise" title="Drie disciplines, één handschrift" />
 
           <div className="flex flex-col gap-[clamp(5rem,10vw,11rem)]">
@@ -112,7 +112,7 @@ export default function Home() {
 
       {/* 03 — Geselecteerde projecten op kalkwit */}
       <section className="theme-light" aria-labelledby="selected-title">
-        <div className="wrap pt-[var(--section)] pb-[clamp(4rem,7vw,7rem)]">
+        <div className="wrap pt-[clamp(4rem,7vw,7rem)] pb-[clamp(4rem,7vw,7rem)]">
           <SectionHead id="selected-title" label="Portfolio" title="Geselecteerde projecten" count={featured.length} />
           <ProjectGrid projects={featured} layout="home" />
           <div className="mt-[clamp(4rem,8vw,8rem)] flex justify-end" data-reveal>

@@ -148,6 +148,9 @@
   .t-small { font-size: 13px; line-height: 1.55; }
   .t-num { font-variant-numeric: tabular-nums lining-nums; }
 
+  /* Titel Over ons: zelfde maat als .t-display, maar nooit breder dan zijn kolom */
+  .about-title { font-size: min(clamp(2.5rem, 6.4vw, 6.75rem), 10.4cqi); }
+
   /* Fijn bronslijntje vóór een label */
   .rule::before {
     content: "";

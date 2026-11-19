@@ -48,9 +48,10 @@ export default function AboutPage() {
             <div className="col-span-12 md:col-span-6 lg:col-span-5 lg:col-start-2">
               <Picture slug="residentie-kalk-en-eik" id="03" alt="Afgeronde kastwand in kalkafwerking" sizes="(min-width:1024px) 42vw, (min-width:768px) 50vw, 100vw" ratio="4 / 5" priority />
             </div>
-            <div className="col-span-12 md:col-span-5 md:col-start-8 lg:col-span-4 lg:col-start-8" data-reveal style={delay(150)}>
+            <div className="col-span-12 md:col-span-6 md:col-start-7 lg:col-span-6 lg:col-start-7 @container" data-reveal style={delay(150)}>
               <p className="t-label rule text-accent mb-8">Over MHD</p>
-              <h1 id="about-title" className="t-h2">Drie generaties vakmanschap.</h1>
+              {/* Zelfde stijl als de titel "Projecten"; krimpt enkel als het langste woord anders niet in de kolom past */}
+              <h1 id="about-title" className="t-display t-caps !tracking-[0.06em] about-title">Drie generaties vakmanschap.</h1>
               <p className="t-lead text-grey mt-6">Een verhaal van ervaring, precisie en aandacht voor materiaal.</p>
             </div>
           </div>
