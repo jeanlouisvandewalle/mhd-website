@@ -17,11 +17,35 @@ const delay = (ms: number) => ({ "--reveal-delay": `${ms}ms` }) as React.CSSProp
  * vervang je de projectbeelden hieronder (props `slug` + `id` van <Picture>) of voeg je
  * een map fotos/over-ons/ toe en verwijs je daarnaar. Label ze dan ook zo in de alt-tekst.
  */
-/** Drie pijlers, overgenomen van de huidige website en ingekort tot één zin. */
-const pillars = [
-  { no: "01", title: "Van vader op zoon", text: "Kennis van hout, al generaties lang doorgegeven." },
-  { no: "02", title: "Passie voor kwaliteit", text: "Kwalitatief hout, Belgische materialen, een ambachtelijke aanpak." },
-  { no: "03", title: "Modern machinepark", text: "Ambacht, gekoppeld aan de nieuwste technieken." },
+/**
+ * "Zo werken we" — drie stappen, elk met een echt beeld uit het atelier of een realisatie.
+ * Foto's staan in fotos/over-ons/ (01–04). Teksten zijn kort gehouden en gebaseerd op de huidige website.
+ */
+const steps = [
+  {
+    no: "01",
+    title: "Met de hand",
+    text: "Kwalitatief hout en Belgische materialen, ambachtelijk bewerkt in ons atelier in Izegem.",
+    img: "02",
+    alt: "Vakman freest een massief houten kader in het atelier",
+    ratio: "16 / 10",
+  },
+  {
+    no: "02",
+    title: "Met precisie",
+    text: "Elk project tekenen we zelf. Een modern machinepark zorgt dat alles tot op de millimeter klopt.",
+    img: "03",
+    alt: "Medewerker van MHD aan de paneelzaag in het atelier",
+    ratio: "16 / 10",
+  },
+  {
+    no: "03",
+    title: "Bij u thuis",
+    text: "Tot het resultaat past bij uw ruimte, uw smaak en uw manier van leven.",
+    img: "04",
+    alt: "Gezin aan een bar op maat met eiken wandbekleding",
+    ratio: "3 / 2",
+  },
 ];
 
 export default function AboutPage() {
@@ -44,58 +68,49 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Familiebedrijf — statement op zwart, met beeldband */}
+      {/* Familiebedrijf — statement op zwart met een beeld uit het atelier */}
       <section className="theme-dark" aria-labelledby="dna-title">
         <div className="wrap py-[var(--section)]">
-          <div className="grid-12 gap-y-10 items-end">
-            <div className="col-span-12 lg:col-span-7" data-reveal>
+          <div className="grid-12 gap-y-12 items-end">
+            <div className="col-span-12 lg:col-span-5" data-reveal>
               <p className="t-label rule text-accent mb-8">Familiebedrijf</p>
               <h2 id="dna-title" className="t-h1 t-caps !tracking-[0.06em]">Hout zit in ons DNA.</h2>
+              <p className="t-lead text-grey mt-8 max-w-[34ch]">
+                Van vader op zoon, al drie generaties. Vandaag staat Dieter Holvoet aan het roer, samen met een team van acht vakmensen.
+              </p>
             </div>
-            <p className="col-span-12 md:col-span-8 lg:col-span-4 lg:col-start-9 t-lead text-grey" data-reveal style={delay(150)}>
-              Dieter Holvoet en een team van acht vakmensen, vanuit een eigen atelier in {site.address.city}.
-            </p>
+            <div className="col-span-12 lg:col-span-7 lg:col-start-6" data-reveal style={delay(150)}>
+              <Picture slug="over-ons" id="01" alt="Twee vakmensen van MHD overleggen aan de werkbank in het atelier" sizes="(min-width:1024px) 58vw, 100vw" ratio="16 / 10" />
+            </div>
           </div>
         </div>
-        <div data-reveal>
-          <Picture
-            slug="uitbouw-leefruimte"
-            id="01"
-            alt="Eethoek met eiken wandbekleding en maatkasten in zwart eiken"
-            sizes="100vw"
-            ratio="none"
-            className="aspect-[4/5] sm:aspect-[3/2] md:aspect-[21/9]"
-          />
-        </div>
       </section>
 
-      {/* Drie pijlers */}
-      <section className="theme-light" aria-labelledby="pillars-title">
-        <div className="wrap pt-[var(--section)] pb-[clamp(4rem,7vw,7rem)]">
-          <h2 id="pillars-title" className="t-label rule text-accent mb-[clamp(3rem,6vw,5rem)]" data-reveal>Waar we voor staan</h2>
-          <ol className="grid gap-y-12 md:grid-cols-3 md:gap-x-[var(--col-gap)]">
-            {pillars.map((p, i) => (
-              <li key={p.no} className="border-t border-line pt-8" data-reveal style={delay(i * 100)}>
-                <span className="t-label text-accent t-num">{p.no}</span>
-                <h3 className="mt-6 t-caps !tracking-[0.1em] text-[clamp(1.25rem,1.7vw,1.625rem)] leading-[1.25]">{p.title}</h3>
-                <p className="text-grey mt-4 max-w-[30ch]">{p.text}</p>
-              </li>
-            ))}
+      {/* Zo werken we — vier stappen, afwisselend beeld links en rechts */}
+      <section className="theme-light" aria-labelledby="steps-title">
+        <div className="wrap py-[var(--section)]">
+          <div className="grid-12 gap-y-6 items-end mb-[clamp(4rem,8vw,8rem)]" data-reveal>
+            <p className="col-span-12 lg:col-span-3 t-label rule text-accent">Zo werken we</p>
+            <h2 id="steps-title" className="col-span-12 lg:col-span-8 t-h2">Van eerste schets tot het moment dat u thuiskomt.</h2>
+          </div>
+
+          <ol className="flex flex-col gap-[clamp(4.5rem,9vw,9rem)]">
+            {steps.map((st, i) => {
+              const flip = i % 2 === 1;
+              return (
+                <li key={st.no} className="grid-12 gap-y-8 items-center" data-reveal>
+                  <div className={`col-span-12 lg:col-span-7 ${flip ? "lg:col-start-6 lg:order-2" : ""}`}>
+                    <Picture slug="over-ons" id={st.img} alt={st.alt} sizes="(min-width:1024px) 58vw, 100vw" ratio={st.ratio} />
+                  </div>
+                  <div className={`col-span-12 md:col-span-8 lg:col-span-4 ${flip ? "lg:col-start-1 lg:order-1" : "lg:col-start-9"}`}>
+                    <span className="t-label text-accent t-num">{st.no}</span>
+                    <h3 className="mt-5 t-caps !tracking-[0.1em] text-[clamp(1.375rem,2vw,1.875rem)] leading-[1.2]">{st.title}</h3>
+                    <p className="text-grey mt-4 t-lead max-w-[32ch]">{st.text}</p>
+                  </div>
+                </li>
+              );
+            })}
           </ol>
-        </div>
-      </section>
-
-      {/* Beeldcompositie: materiaal en detail */}
-      <section className="theme-kalk" aria-label="Details uit realisaties">
-        <div className="wrap pt-0 pb-[var(--section)]">
-        <div className="grid-12 gap-y-[clamp(3.5rem,9vw,10rem)] items-end">
-          <figure className="col-span-12 md:col-span-5 lg:col-span-4 lg:col-start-2" data-reveal>
-            <Picture slug="uitbouw-leefruimte" id="13" alt="Detail van een kastfront in zwart eiken" sizes="(min-width:1024px) 34vw, (min-width:768px) 42vw, 100vw" />
-          </figure>
-          <figure className="col-span-12 md:col-span-6 md:col-start-7" data-reveal style={delay(150)}>
-            <Picture slug="residentie-kalk-en-eik" id="04" alt="Eiken kastdeuren met houten grepen" sizes="(min-width:768px) 50vw, 100vw" ratio="4 / 5" />
-          </figure>
-        </div>
         </div>
       </section>
 
