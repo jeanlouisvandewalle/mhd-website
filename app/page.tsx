@@ -114,7 +114,11 @@ export default function Home() {
       {/* 03 — Geselecteerd project: één project in de kijker, door de foto's bladeren */}
       <section className="theme-light" aria-labelledby="selected-title">
         <div className="wrap pt-[clamp(4rem,7vw,7rem)] pb-[clamp(4rem,7vw,7rem)]">
-          <SectionHead id="selected-title" label="Portfolio" title="Geselecteerd project" />
+          {/* Kop gecentreerd boven de hoofdfoto (die staat zelf in het midden van de pagina) */}
+          <div className="text-center mb-[clamp(3rem,6vw,6rem)]" data-reveal>
+            <p className="t-label rule-center text-accent -translate-x-[0.13em]">Portfolio</p>
+            <h2 id="selected-title" className="t-h2 mt-6">Geselecteerd project</h2>
+          </div>
           <div data-reveal>
             <ProjectSpotlight data={{ ...lightboxData(spotlight, { link: true }), href: `/projecten/${spotlight.slug}/` }} />
           </div>

@@ -167,6 +167,13 @@
     transform: translateY(-1px);
   }
 
+  /* Gecentreerd label met een bronslijntje aan beide kanten */
+  .rule-center { display: inline-flex; align-items: center; gap: 16px; }
+  .rule-center::before,
+  .rule-center::after { content: ""; width: 32px; height: 1px; background: var(--accent); }
+  /* De letterspatiëring na de laatste letter staat tussen tekst en rechterlijn; links even veel ruimte */
+  .rule-center::before { margin-right: 0.26em; }
+
   /* ---------- links -------------------------------------------------------- */
 
   .link-line {
