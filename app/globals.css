@@ -465,3 +465,8 @@
   /* Klikbare galerijfoto */
   .zoomable { display: block; width: 100%; cursor: zoom-in; }
 }
+
+@layer components {
+  /* Zachte overgang bij het wisselen van foto in "Geselecteerd project" */
+  .spotlight-img { animation: lb-in 600ms var(--ease-out-soft) both; }
+}

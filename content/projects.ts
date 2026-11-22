@@ -41,6 +41,8 @@ export type Project = {
   gallery: ProjectImage[];
   order: number;
   featured: boolean;
+  /** Het project dat als "Geselecteerd project" op de homepage staat (slechts één) */
+  spotlight?: boolean;
   location?: string;
   year?: number;
   scope?: string[];
@@ -59,6 +61,7 @@ export const projects: Project[] = [
     coverPortrait: "03",
     order: 1,
     featured: true,
+    spotlight: true,
     scope: ["Keuken", "Maatkasten", "Slaapkamers", "Kinderkamer"],
     gallery: [
       { id: "01", alt: "Leefruimte met keuken, eettafel en zithoek in kalk en eik" },

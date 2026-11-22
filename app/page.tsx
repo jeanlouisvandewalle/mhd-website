@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Picture } from "@/components/Picture";
-import { ProjectGrid } from "@/components/projects";
+import { ProjectSpotlight } from "@/components/ProjectSpotlight";
+import { lightboxData } from "@/lib/lightbox";
 import { ArrowLink } from "@/components/ui";
 import { Arrow } from "@/components/Logo";
 import { sortedProjects } from "@/content/projects";
@@ -46,7 +47,7 @@ const expertise = [
 ];
 
 export default function Home() {
-  const featured = sortedProjects.filter((p) => p.featured);
+  const spotlight = sortedProjects.find((p) => p.spotlight) ?? sortedProjects[0];
 
   return (
     <>
@@ -110,11 +111,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 03 — Geselecteerde projecten op kalkwit */}
+      {/* 03 — Geselecteerd project: één project in de kijker, door de foto's bladeren */}
       <section className="theme-light" aria-labelledby="selected-title">
         <div className="wrap pt-[clamp(4rem,7vw,7rem)] pb-[clamp(4rem,7vw,7rem)]">
-          <SectionHead id="selected-title" label="Portfolio" title="Geselecteerde projecten" count={featured.length} />
-          <ProjectGrid projects={featured} layout="home" />
+          <SectionHead id="selected-title" label="Portfolio" title="Geselecteerd project" />
+          <div data-reveal>
+            <ProjectSpotlight data={{ ...lightboxData(spotlight, { link: true }), href: `/projecten/${spotlight.slug}/` }} />
+          </div>
           <div className="mt-[clamp(4rem,8vw,8rem)] flex justify-end" data-reveal>
             <ArrowLink href="/projecten/">Bekijk alle projecten</ArrowLink>
           </div>

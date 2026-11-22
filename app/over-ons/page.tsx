@@ -61,7 +61,7 @@ export default function AboutPage() {
             <div className="col-span-12 md:col-span-6 md:col-start-7 lg:col-span-6 lg:col-start-7 @container" data-reveal style={delay(150)}>
               <p className="t-label rule text-accent mb-8">Over MHD</p>
               {/* Zelfde stijl als de titel "Projecten"; krimpt enkel als het langste woord anders niet in de kolom past */}
-              <h1 id="about-title" className="t-display t-caps !tracking-[0.06em] about-title">Drie generaties vakmanschap.</h1>
+              <h1 id="about-title" className="t-display t-caps !tracking-[0.06em] about-title">Drie generaties vakmanschap</h1>
               <p className="t-lead text-grey mt-6">Een verhaal van ervaring, precisie en aandacht voor materiaal.</p>
             </div>
           </div>
@@ -74,7 +74,7 @@ export default function AboutPage() {
           <div className="grid-12 gap-y-12 items-end">
             <div className="col-span-12 lg:col-span-5" data-reveal>
               <p className="t-label rule text-accent mb-8">Familiebedrijf</p>
-              <h2 id="dna-title" className="t-h1 t-caps !tracking-[0.06em]">Hout zit in ons DNA.</h2>
+              <h2 id="dna-title" className="t-h1 t-caps !tracking-[0.06em]">Hout zit in ons DNA</h2>
               <p className="t-lead text-grey mt-8 max-w-[34ch]">
                 Van vader op zoon, al drie generaties. Vandaag staat Dieter Holvoet aan het roer, samen met een team van acht vakmensen.
               </p>
@@ -91,7 +91,7 @@ export default function AboutPage() {
         <div className="wrap py-[var(--section)]">
           <div className="grid-12 gap-y-6 items-end mb-[clamp(4rem,8vw,8rem)]" data-reveal>
             <p className="col-span-12 lg:col-span-3 t-label rule text-accent">Zo werken we</p>
-            <h2 id="steps-title" className="col-span-12 lg:col-span-8 t-h2">Van eerste schets tot het moment dat u thuiskomt.</h2>
+            <h2 id="steps-title" className="col-span-12 lg:col-span-8 t-h2">Van eerste schets tot het moment dat u thuiskomt</h2>
           </div>
 
           <ol className="flex flex-col gap-[clamp(4.5rem,9vw,9rem)]">
@@ -116,7 +116,7 @@ export default function AboutPage() {
 
       {/* Atelier */}
       <section className="theme-dark">
-        <div className="wrap py-[var(--section)]">
+        <div className="wrap pt-[var(--section)] pb-[clamp(3rem,6vw,6rem)]">
         <div className="grid-12 gap-y-10 items-end">
           <div className="col-span-12 lg:col-span-7" data-reveal>
             <p className="t-label rule text-accent mb-8">Atelier</p>
