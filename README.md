@@ -12,6 +12,21 @@ npm run build      # afbeeldingen + statische site in out/
 De map `out/` is een volledig statische website. Upload ze naar eender welke host
 (GitHub Pages, Netlify, Cloudflare Pages, klassieke webhosting). Er is geen server nodig.
 
+## Publiceren
+
+- **Repository:** https://github.com/jeanlouisvandewalle/mhd-website (publiek)
+- **Voorbeeldlink:** https://jeanlouisvandewalle.github.io/mhd-website/
+- Elke push naar `main` bouwt en publiceert de site automatisch via GitHub Actions
+  (`.github/workflows/deploy.yml`). De voortgang zie je in het tabblad *Actions* op GitHub.
+- De voorbeeldlink draait in een submap en wordt niet geïndexeerd door Google (`noindex`).
+- **Naar het eigen domein:** zet in de workflow `NEXT_PUBLIC_BASE_PATH` leeg, voeg `public/CNAME`
+  met `totaalprojecten-mhd.be` toe, stel het domein in bij *Settings → Pages* en laat de DNS-records
+  bij de domeinbeheerder naar GitHub Pages wijzen. Vraag MHD om dat domein ook in hun Adobe Fonts-kit
+  te laten staan.
+- **Lettertype op de voorbeeldlink:** Sweet Sans Pro komt uit de Adobe Fonts-kit van MHD. Laadt het
+  niet op `jeanlouisvandewalle.github.io`, dan moet dat domein in die kit worden toegevoegd (door MHD,
+  in hun Adobe-account). Tot dan valt de voorbeeldlink terug op Helvetica/Arial.
+
 ---
 
 ## 1. Designrichting
