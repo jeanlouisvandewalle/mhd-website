@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { site } from "@/content/site";
+import { BASE_PATH } from "@/lib/basePath";
 
 /**
  * Doorverwijzing voor URL's van de vorige website (statische hosting kent geen
@@ -8,7 +9,7 @@ import { site } from "@/content/site";
 export function LegacyRedirect({ to }: { to: string }) {
   return (
     <>
-      <meta httpEquiv="refresh" content={`0; url=${to}`} />
+      <meta httpEquiv="refresh" content={`0; url=${BASE_PATH}${to}`} />
       <link rel="canonical" href={`${site.url}${to}`} />
       <meta name="robots" content="noindex, follow" />
       <section className="wrap py-[var(--section)]">

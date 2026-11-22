@@ -22,6 +22,8 @@ export const metadata: Metadata = {
   },
   twitter: { card: "summary_large_image" },
   formatDetection: { telephone: false },
+  // De voorbeeldversie in een submap (GitHub Pages) niet laten indexeren: enkel het eigen domein telt.
+  ...(process.env.NEXT_PUBLIC_BASE_PATH ? { robots: { index: false, follow: false } } : {}),
 };
 
 export const viewport: Viewport = {

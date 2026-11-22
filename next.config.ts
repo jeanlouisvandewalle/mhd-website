@@ -5,8 +5,12 @@ import type { NextConfig } from "next";
  * te hosten op GitHub Pages, Netlify, Cloudflare Pages of elke andere webserver.
  * Afbeeldingen worden vooraf geoptimaliseerd door `scripts/images.mjs`.
  */
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || undefined;
+
 const nextConfig: NextConfig = {
   output: "export",
+  // Enkel voor de voorbeeldlink op GitHub Pages (submap); leeg op het eigen domein.
+  basePath,
   trailingSlash: true,
   images: { unoptimized: true },
   turbopack: {
