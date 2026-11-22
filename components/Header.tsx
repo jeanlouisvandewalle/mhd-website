@@ -104,7 +104,7 @@ export function Header() {
         <nav aria-label="Mobiele navigatie" className="wrap flex flex-1 flex-col justify-between pt-10 pb-10">
           <ul className="flex flex-col gap-2">
             <li className="mm-item" style={{ transitionDelay: "60ms" }}>
-              <Link href="/projecten/" className="t-h1 t-caps block py-1">Projecten</Link>
+              <Link href="/projecten/" className="t-h1 t-caps block py-1 !text-[min(clamp(2.125rem,4.6vw,4.5rem),9.2vw)]">Projecten</Link>
               <ul className="mt-3 mb-5 flex flex-col gap-1 pl-1">
                 {categories.map((c) => (
                   <li key={c.slug}>
@@ -117,7 +117,7 @@ export function Header() {
             </li>
             {nav.slice(1).map((item, i) => (
               <li key={item.href} className="mm-item" style={{ transitionDelay: `${120 + i * 60}ms` }}>
-                <Link href={item.href} className="t-h1 t-caps block py-1">{item.label}</Link>
+                <Link href={item.href} className="t-h1 t-caps block py-1 !text-[min(clamp(2.125rem,4.6vw,4.5rem),9.2vw)]">{item.label}</Link>
               </li>
             ))}
           </ul>

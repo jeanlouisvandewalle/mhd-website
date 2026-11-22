@@ -17,8 +17,8 @@ export default function ContactPage() {
         <div data-reveal>
           <p className="t-label rule text-accent mb-8">Contact</p>
           {/* Optische uitlijning: de E van Sweet Sans heeft 0,13em witruimte links, de W 0,04em */}
-          <h1 className="t-display -ml-[0.13em]">Een project bespreken?</h1>
-          <p className="t-caps !tracking-[0.22em] text-[clamp(0.8125rem,1.05vw,1rem)] text-grey mt-8 -ml-[0.04em]">We horen graag van je.</p>
+          <h1 className="t-display t-caps !tracking-[0.06em] fit-caps relative -left-[0.13em]">Een project bespreken?</h1>
+          <p className="t-lead text-grey mt-6 relative -left-[0.04em]">We horen graag van je.</p>
         </div>
       </section>
 

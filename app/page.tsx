@@ -130,8 +130,8 @@ export default function Home() {
           <div className="grid-12 gap-y-10 items-end">
             <div className="col-span-12 lg:col-span-9" data-reveal>
               <p className="t-label rule text-accent mb-8">Contact</p>
-              <h2 id="contact-title" className="t-display">Een project in gedachten?</h2>
-              <p className="t-lead text-grey mt-6">We luisteren graag.</p>
+              <h2 id="contact-title" className="t-display t-caps !tracking-[0.06em] fit-caps relative -left-[0.13em]">Een project in gedachten?</h2>
+              <p className="t-lead text-grey mt-6 relative -left-[0.04em]">We luisteren graag.</p>
             </div>
             <div className="col-span-12 lg:col-span-3 lg:text-right" data-reveal style={delay(150)}>
               <ArrowLink href="/contact/">Neem contact op</ArrowLink>
@@ -159,7 +159,7 @@ function Discipline({ no, title, text, className = "" }: { no: string; title: st
   return (
     <div className={className}>
       <p className="t-label text-accent t-num mb-6">{no}</p>
-      <h3 className="t-caps !tracking-[0.08em] text-[clamp(1.5rem,2.6vw,2.25rem)] leading-[1.15]">{title}</h3>
+      <h3 className="t-caps !tracking-[0.08em] text-[min(clamp(1.5rem,2.6vw,2.25rem),6.5vw)] leading-[1.15]">{title}</h3>
       <p className="text-grey mt-5">{text}</p>
       <span className="arrow-link mt-8">
         <span className="label">Bekijk {title.toLowerCase()}</span>

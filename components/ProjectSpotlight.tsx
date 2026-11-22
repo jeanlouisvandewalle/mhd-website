@@ -84,7 +84,7 @@ export function ProjectSpotlight({ data }: { data: Data & { href: string } }) {
           <p className="t-label text-accent">{data.label}</p>
           <h3 className="mt-3 text-[13px] t-caps !tracking-[0.2em] font-semibold">{data.title}</h3>
         </div>
-        <div className="col-span-12 md:col-span-6 lg:col-span-3 flex items-center justify-between md:justify-end gap-6">
+        <div className="col-span-12 md:col-span-6 lg:col-span-3 flex flex-wrap items-center justify-between md:justify-end gap-x-6 gap-y-2">
           <div className="flex items-center gap-2">
             <button type="button" onClick={() => go(-1)} aria-label="Vorige foto" className="w-11 h-11 inline-flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity">
               <Arrow className="rotate-180" />
